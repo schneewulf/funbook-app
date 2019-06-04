@@ -1,60 +1,54 @@
 import React from 'react';
-import {Platform} from 'react-native';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 
-import TabBarIcon from '../components/TabBarIcon';
+import Icon from '../components/Icon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import BooksScreen from '../screens/BooksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-const HomeStack = createStackNavigator({
+const bottomTab = createBottomTabNavigator({
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: {
+      tabBarLabel: 'Settings',
+      tabBarIcon: ({focused}: {focused: boolean}) => (
+        <Icon isFocused={focused} name={'help'} />
+      ),
+    },
+  },
+  Books: {
+    screen: BooksScreen,
+    navigationOptions: {
+      tabBarLabel: 'Books',
+      tabBarIcon: ({focused}: {focused: boolean}) => (
+        <Icon isFocused={focused} name={'chrome-reader-mode'} />
+      ),
+    },
+  },
+  Settings: {
+    screen: SettingsScreen,
+    navigationOptions: {
+      tabBarLabel: 'Settings',
+      tabBarIcon: ({focused}: {focused: boolean}) => (
+        <Icon isFocused={focused} name={'help'} />
+      ),
+    },
+  },
+});
+
+const HomeStack = {
   Home: HomeScreen,
-});
-
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: ({focused}: {focused: boolean}) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
+};
+const BookStack = {
+  Home: HomeScreen,
+};
+const SettingStack = {
+  Home: HomeScreen,
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
-});
-
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({focused}: {focused: boolean}) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
-  ),
-};
-
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-});
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({focused}: {focused: boolean}) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
-};
-
-export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+export default createStackNavigator({
+  bottomTab,
+  ...HomeStack,
+  ...BookStack,
+  ...SettingStack,
 });
