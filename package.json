@@ -2,10 +2,18 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "lint": "tslint -p .",
+    "typecheck": "tsc --noEmit -p .",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    "test-src": "node ./node_modules/jest/bin/jest.js --watchAll",
+    "test": "yarn lint && yarn typecheck"
+  },
+  "husky": {
+      "hooks": {
+        "pre-push": "yarn test"
+      }
   },
   "jest": {
     "preset": "jest-expo"
@@ -25,6 +33,7 @@
     "@types/react-native-vector-icons": "^6.4.1",
     "@types/react-navigation": "^3.0.7",
     "babel-preset-expo": "^5.0.0",
+    "husky": "^2.3.0",
     "jest-expo": "^32.0.0",
     "prettier": "^1.17.1",
     "prettier-tslint": "^0.4.2",
