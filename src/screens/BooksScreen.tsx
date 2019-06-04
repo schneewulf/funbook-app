@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, ScrollView, StyleSheet} from 'react-native';
+import {Text} from 'react-native';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
