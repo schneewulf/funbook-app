@@ -1,0 +1,14 @@
+{
+  "defaultSeverity": "error",
+  "rulesDirectory": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-plugin-prettier",
+    "tslint-config-prettier",
+    "tslint-config-kodefox"
+  ],
+  "rules": true,
+  "linterOptions": {
+    "exclude": ["node_modules/**/*", "**/*.js"]
+  }
+}
