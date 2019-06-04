@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 
-import Icon from '../components/Icon';
+import Icon from '../core-ui/Icon';
 import HomeScreen from '../screens/HomeScreen';
 import BooksScreen from '../screens/BooksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
