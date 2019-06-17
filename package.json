@@ -11,9 +11,9 @@
     "test": "yarn lint && yarn typecheck"
   },
   "husky": {
-      "hooks": {
-        "pre-push": "yarn test"
-      }
+    "hooks": {
+      "pre-push": "yarn test"
+    }
   },
   "jest": {
     "preset": "jest-expo"
@@ -22,13 +22,17 @@
     "@expo/samples": "2.1.1",
     "expo": "^32.0.0",
     "react": "16.5.0",
+    "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-avataaars": "^1.0.2",
+    "react-native-swiper": "^1.5.14",
     "react-native-vector-icons": "^6.4.2",
     "react-navigation": "^3.0.9"
   },
   "devDependencies": {
     "@types/expo": "^32.0.13",
     "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
     "@types/react-native": "^0.57.60",
     "@types/react-native-vector-icons": "^6.4.1",
     "@types/react-navigation": "^3.0.7",
