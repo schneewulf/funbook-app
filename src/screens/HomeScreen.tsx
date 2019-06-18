@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Avatar, Piece} from 'react-native-avataaars';
+import {Avatar} from 'react-native-avataaars';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
