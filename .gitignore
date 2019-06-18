@@ -5,3 +5,14 @@ npm-debug.*
 *.p12
 *.key
 *.mobileprovision
+
+# Android/IntelliJ
+build/
+.idea
+.gradle
+local.properties
+*.iml
+gradle-app.setting
+.gradletasknamecache
+# gradle-wrapper.jar is needed.
+!gradle-wrapper.jar
