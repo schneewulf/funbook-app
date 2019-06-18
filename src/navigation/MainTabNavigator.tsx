@@ -10,9 +10,9 @@ const bottomTab = createBottomTabNavigator({
   Home: {
     screen: HomeScreen,
     navigationOptions: {
-      tabBarLabel: 'Settings',
+      tabBarLabel: 'Home',
       tabBarIcon: ({focused}: {focused: boolean}) => (
-        <Icon isFocused={focused} name={'help'} />
+        <Icon isFocused={focused} name={'home'} />
       ),
     },
   },
